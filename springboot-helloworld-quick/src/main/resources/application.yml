@@ -1,0 +1,26 @@
+spring:
+  profiles:
+    active: dev
+
+
+---
+spring:
+  profiles: dev
+
+server:
+  port: 8088
+
+logging:
+  level:
+    com:
+      wxn: trace
+  pattern:
+    console: -%d{yyyy-MM-dd HH:mm:ss} [%thread] %-5level %logger{50} - %msg%n
+    file: -%d{yyyy-MM-dd HH:mm:ss} === [%thread] === %-5level === %logger{50} === %msg%n
+#  path: C:\Users\64973\Desktop\log
+#  file: springboot.log
+---
+spring:
+  profiles: prod
+server:
+  port: 80
