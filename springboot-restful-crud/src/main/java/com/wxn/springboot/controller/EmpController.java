@@ -25,7 +25,6 @@ public class EmpController {
 
 	/**
 	 * 获取员工列表 返回员工列表页面
-	 * @return
 	 */
 	@GetMapping("/emps")
 	public String list(Model model){
@@ -36,7 +35,6 @@ public class EmpController {
 
 	/**
 	 * 来到员工添加页面
-	 * @return
 	 */
 	@GetMapping("emp")
 	public String toAddPage(Model model){
