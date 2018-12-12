@@ -19,7 +19,7 @@ public class MyMvcConfig implements WebMvcConfigurer {
 
 	@Override
 	public void addViewControllers(ViewControllerRegistry registry) {
-		registry.addViewController("/index").setViewName("/login");
+//		registry.addViewController("/index").setViewName("/login");
 	}
 
 	//拦截器注册
@@ -27,8 +27,8 @@ public class MyMvcConfig implements WebMvcConfigurer {
 	public void addInterceptors(InterceptorRegistry registry) {
 		//静态资源；  *.css , *.js
 		//SpringBoot已经做好了静态资源映射
-		registry.addInterceptor(new LoginHandlerInterceptor()).addPathPatterns("/**")
-				.excludePathPatterns("/index","/login","/","/login.html","/user/login");
+//		registry.addInterceptor(new LoginHandlerInterceptor()).addPathPatterns("/**")
+//				.excludePathPatterns("/","/index","/login","/login.html","/user/login","/webjars/**","/asserts/**");
 	}
 
 	@Bean
@@ -40,6 +40,7 @@ public class MyMvcConfig implements WebMvcConfigurer {
 				registry.addViewController("/login").setViewName("login");
 				registry.addViewController("/login.html").setViewName("login");
 				registry.addViewController("/main.html").setViewName("dashboard");
+				registry.addViewController("/index").setViewName("login");
 			}
 		};
 	}

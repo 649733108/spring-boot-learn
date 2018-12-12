@@ -4,8 +4,10 @@ package com.wxn.springboot.controller;
  * 2018/12/10 1:30
  */
 
+import com.wxn.springboot.Exception.UserNotExistException;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -22,7 +24,10 @@ public class HelloController {
 
 	@ResponseBody
 	@RequestMapping("/hello")
-	public String hello(){
+	public String hello(@RequestParam("user")String user){
+		if (user.equals("aaa")){
+			throw new UserNotExistException();
+		}
 		return "hello";
 	}
 
@@ -34,4 +39,5 @@ public class HelloController {
 		return "success";
 
 	}
+
 }
